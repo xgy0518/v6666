@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- vue的基本功能模块, 其实就是一个稍大型一点的模型引擎 -->
+    <div id="app">
+      <h1>{{ msg }}</h1>
+      <h1>{{ msg }}</h1>
+      <h1>{{ msg }}</h1>
+    </div>
+
+    <script src="./vue.js"></script>
+    <script>
+      // 只要引入vue ，就在全局，有一个Vue 构造函数
+      const vm = new Vue({
+        el: "#app",
+        data: {
+          msg: "你好; vue",
+        },
+      });
+    </script>
+  </body>
+</html>

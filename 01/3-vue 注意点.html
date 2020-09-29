@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=
+    , initial-scale=1.0"
+    />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="main">
+      <div id="box">
+        <h1>{{msg}}</h1>
+        <h2>{{car}}</h2>
+      </div>
+      <div id="box2">
+        <h1>{{msg}}</h1>
+        <h2>{{car}}</h2>
+      </div>
+    </div>
+    <script src="./vue.js"></script>
+    <script>
+      const vm = new Vue({
+        el: "#main",
+        data: {
+          msg: "嘿嘿",
+          count: "100",
+          car: "宝马车",
+        },
+      });
+
+      // vue实例化的过程中, 将data中的所有的数据, 都会添加到 vm 实例上
+      console.log(vm.msg);
+      console.log(vm.count);
+
+      /*
+      注意点：
+        1.Vue 的构造函数，首字母大写
+        2.el不能指定成 body 或者 html
+        3.到了vue，要时刻记住：数据驱动，要驱动视图，操作数据
+            vm.xxx =值
+      
+      */
+    </script>
+  </body>
+</html>

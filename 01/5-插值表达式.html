@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      [v-cloak] {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <h1 v-cloak>{{house}}</h1>
+      <h1 v-cloak>{{ obj.name }}</h1>
+      <h1 v-cloak>{{ obj.age }}</h1>
+      <h1 v-cloak>{{ obj.desc }}</h1>
+      <h1 v-cloak>{{ msg.toUpperCase() }}</h1>
+      <h1 v-cloak>{{ obj.age >= 18 ? '成年人' :'小屁孩儿'}}</h1>
+    </div>
+    <script src="./vue.js"></script>
+    <script>
+      const vm = new Vue({
+        el: "#app",
+        data: {
+          msg: "heel vue",
+          money: 100,
+          house: "新疆大别墅",
+          obj: {
+            name: "老铁",
+            age: 48,
+            desc: "没毛病",
+          },
+        },
+      });
+    </script>
+  </body>
+</html>

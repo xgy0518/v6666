@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <h1 v-if="grade >=80">80分以上 打游戏</h1>
+      <h1 v-else-if="grade >=60">60分以上 睡觉</h1>
+      <h1 v-else-if="grade >=40">40分以上 跪搓衣板</h1>
+      <h1 v-else>20以下 找4</h1>
+    </div>
+    <script src="./vue.js"></script>
+    <script>
+      const vm = new Vue({
+        el: "#app",
+        data: {
+          name: "小明",
+          age: 18,
+          grade: 30,
+        },
+      });
+    </script>
+  </body>
+</html>
