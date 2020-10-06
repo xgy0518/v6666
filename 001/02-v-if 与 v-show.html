@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <div v-if="flag">我是v-if控制的内容</div>
+      <div v-show="flag">我是v-show控制的内容</div>
+    </div>
+    <script src="./vue.js"></script>
+    <script>
+      const vm = new Vue({
+        el: "#app",
+        data: {
+          msg: "hello vue",
+          flag: true,
+        },
+      });
+    </script>
+  </body>
+</html>
+
+<!-- v-if 与 v-show 是控制元素的显示与隐藏 -->
