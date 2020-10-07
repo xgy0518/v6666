@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <demo></demo>
+      <demo></demo>
+      <demo></demo>
+    </div>
+
+    <script src="./vue.js"></script>
+    <script>
+      Vue.component("demo", {
+        template: `
+            <div>
+                <div>我是demo组件 - {{ count }}</div>
+                <button @click='fn'>按钮</button>
+            </div>
+        `,
+        // 每个组件在实例化时, 都会执行data函数, 会将data函数的返回值, 作为该实例的数据
+        // 这么做的好处: 可以保证每个组件的数据是独立的
+        data: function () {
+          // 每次执行, 都是新创建一个obj, 都是独立的
+          //   const obj = {
+          //     const: 0,
+          //   };
+          //   return obj;
+
+          return {
+            count: 0,
+          };
+        },
+        methods: {
+          fn() {
+            this.count++;
+            // alert("hello, 你好, 萨瓦滴哈, 哦哈呦");
+          },
+        },
+      });
+      // 根实例 和 组件配置区别:
+      // 1. el, el是根实例独有的
+      // 2. data 对于根实例是一个对象, data对于组件是一个函数, 在函数中返回一个对象
+      const vm = new Vue({
+        el: "#app",
+        data: {
+          msg: "hello vue",
+        },
+      });
+    </script>
+  </body>
+</html>
